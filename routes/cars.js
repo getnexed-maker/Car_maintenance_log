@@ -88,3 +88,5 @@ router.delete("/delete", authenticateToken, async(req,res)=>{
         res.status(500).json({ message: "Failed deleting car" })
     }
 })
+
+export default router

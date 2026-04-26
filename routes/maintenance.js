@@ -6,10 +6,10 @@ import authenticateToken from "../middleware/auth.js"
 const router = express.Router();
 
 
-router.post("/maintenance/:carId", authenticateToken, async (req,res)=> {
+router.post("/:carId", authenticateToken, async (req,res)=> {
     const userId = req.user.id
     const carId = req.params.carId
-    const typeId = req.body.typeId
+    const typeId = req.body.type_id
     const name = req.body.name
     const cost = req.body.cost
     const mileage_at_service = req.body.mileage_at_service

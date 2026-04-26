@@ -6,9 +6,6 @@ import maintenanceRoutes from "./routes/maintenance.js";
 import bodyParser from "body-parser";
 
 
-app.use(bodyParser.urlencoded({ extended: true }));
-
-
 const app = express();
 app.use(express.json());
 

@@ -8,7 +8,7 @@ import "dotenv/config";
 const router = express.Router();
 const saltrounds = 10
 
-router.post("/auth/register", async (req, res) =>{
+router.post("/register", async (req, res) =>{
 const email = req.body.email;
 const password = req.body.password;
 
@@ -31,7 +31,7 @@ try {
     console.log(err);
 }})
 
-router.post("/auth/login", async (req,res) => {
+router.post("/login", async (req,res) => {
 const email = req.body.email;
 const password = req.body.password;
 
