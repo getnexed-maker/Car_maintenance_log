@@ -4,7 +4,10 @@ import authRoutes from "./routes/auth.js";
 import carRoutes from "./routes/cars.js";
 import maintenanceRoutes from "./routes/maintenance.js";
 import bodyParser from "body-parser";
+import cors from "cors";
 
+
+app.use(cors());
 
 const app = express();
 app.use(express.json());
