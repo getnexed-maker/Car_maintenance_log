@@ -21,14 +21,17 @@ function handleEmail(event) {
   }
 
 async function handleSubmit () {
+  console.log("submit clicked")
     const url = "http://localhost:3000/auth/login"
     try {
         const response = await fetch(url, {method: "POST",  headers: {
     "Content-Type": "application/json"}, body: JSON.stringify({email, password})
   })
-            
+console.log(response.status)
+console.log(response.ok)
     if (response.ok) {
             const token = await response.json();
+            console.log(token);
             localStorage.setItem("token", token.token)
             navigate("/cars")
             setEmail("")
@@ -50,9 +53,9 @@ return (
   <h1>Car maintenance log</h1>
     <div>
     <form>
-        <input name="email" value={email} onChange={handleEmail}/>
-        <input name="password"value={password} onChange={handlePassword}/>
-        <button onClick={handleSubmit}>submit</button>
+        <input name="email" value={email} onChange={handleEmail} autoComplete="on"/>
+        <input name="password" value={password} onChange={handlePassword} autoComplete="off"/>
+        <button type="button" onClick={handleSubmit}>submit</button>
         <p>{error}</p>
     </form>
   </div>
