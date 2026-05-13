@@ -28,7 +28,7 @@ router.get("/", authenticateToken, async(req,res)=>{
     const userId = req.user.id
     try {
         const result = await db.query("SELECT * FROM cars WHERE user_id=$1", [userId])
-        res.json({ cars: result.rows })
+        res.json( result.rows)
     } catch (err) {
         res.status(500).json({ message: "Failed loading cars" })
     }

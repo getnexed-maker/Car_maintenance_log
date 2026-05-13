@@ -53,8 +53,8 @@ return (
   <h1>Car maintenance log</h1>
     <div>
     <form>
-        <input name="email" value={email} onChange={handleEmail} autoComplete="on"/>
-        <input name="password" value={password} onChange={handlePassword} autoComplete="off"/>
+        <input name="email" value={email} onChange={handleEmail} autoComplete="on" placeholder="email"/>
+        <input name="password" value={password} onChange={handlePassword} autoComplete="off" placeholder="password"/>
         <button type="button" onClick={handleSubmit}>submit</button>
         <p>{error}</p>
     </form>
